@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public bool colorblindMode = false;
     public Material trapMat;
     public Material goalMat;
-    public bool colorblindMode = false;
+    
 
 
     // Load the maze scene when the play button is pressed 
