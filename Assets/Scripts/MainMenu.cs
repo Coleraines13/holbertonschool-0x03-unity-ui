@@ -8,14 +8,13 @@ public class MainMenu : MonoBehaviour
 {
     public Material trapMat;
     public Material goalMat;
-    public Toggle colorblindMode;
+    public bool colorblindMode = false;
 
 
     // Load the maze scene when the play button is pressed 
     public void PlayMaze()
     {
-        if (colorblindMode.isOn)
-        {
+        if (colorblindMode)        {
             trapMat.color = new Color32(255, 112, 0, 1);
             goalMat.color = Color.blue;
         }

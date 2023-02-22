@@ -105,6 +105,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetButton("Cancel"))
+        {
+            SceneManager.LoadScene("menu");
+        }
+
+        
         if(health == 0)
         {
         appologyMessageTextField();
