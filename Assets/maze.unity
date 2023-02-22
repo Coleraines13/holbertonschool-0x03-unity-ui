@@ -1818,6 +1818,8 @@ MonoBehaviour:
   speed: 1000
   rb: {fileID: 398277574}
   health: 5
+  winLoseBG: {fileID: 225355570}
+  winLoseText: {fileID: 1625977222}
 --- !u!54 &398277574
 Rigidbody:
   m_ObjectHideFlags: 0

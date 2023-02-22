@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     private int score = 0;
     public int health = 5;
+    public Image winLoseBG;
+    public Text winLoseText;
 
 
     void OnTriggerEnter(Collider other)
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "Goal")
         {
-            Debug.Log("You win!");
+            congratsTextField();
         }
     }
     void SetScoreText(){
@@ -45,6 +47,25 @@ public class PlayerController : MonoBehaviour
     void SetHealthText()
     {
         healthText.text = $"Health: {health}";
+    }
+
+
+    //Displays congrats message oin the text field
+    void congratsTextField()
+    {
+        winLoseBG.color = new Color32(0, 255, 0, 255);
+        winLoseText.color = new Color32(0, 0, 0, 255);
+        winLoseText.text = "You win!";
+        winLoseBG.gameObject.SetActive(true);
+    }
+
+    //displays your failure
+    void appologyMessageTextField()
+    {
+        winLoseBG.color = new Color32(255, 0, 0, 255);
+        winLoseText.color = new Color32(0, 0, 0, 255);
+        winLoseText.text = "Game over!";
+        winLoseBG.gameObject.SetActive(true);
     }
     
     // Update is called once per frame
@@ -76,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         if(health == 0)
         {
-        Debug.Log("Game Over!");
+        appologyMessageTextField();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
